@@ -1,0 +1,10 @@
+SELECT name, price, (price / cost) AS 'efficiency',
+CASE 
+    WHEN (price / cost) >= 1.7 THEN '고효율 메뉴'
+    WHEN (price / cost) >= 1.5 THEN '중효율 메뉴'
+    WHEN (price / cost) >= 1 THEN '저효율 메뉴'
+END
+AS efficiency_category 
+FROM pizza_price_cost
+ORDER BY efficiency ASC
+LIMIT 5;
