@@ -1,0 +1,2 @@
+SELECT COUNT(id) AS 'review_count', ROUND(AVG(star)) AS 'avg_star'  FROM review
+WHERE comment IS NOT NULL 
