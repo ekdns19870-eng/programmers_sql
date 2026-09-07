@@ -1,0 +1,5 @@
+SELECT category, main_month,  COUNT(*) AS movie_count, 
+    SUM(view_count) AS total_audience FROM 2020_movie_report
+    WHERE main_month = 5
+    GROUP BY category,main_month
+    HAVING SUM(view_count) >= 3000000
