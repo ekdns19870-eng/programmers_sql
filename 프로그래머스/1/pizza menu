@@ -1,0 +1,3 @@
+SELECT name,COALESCE(sales_volume,0) AS sales
+    FROM pizza_price_cost  LEFT OUTER JOIN sales 
+    ON pizza_price_cost.id = sales.menu_id
