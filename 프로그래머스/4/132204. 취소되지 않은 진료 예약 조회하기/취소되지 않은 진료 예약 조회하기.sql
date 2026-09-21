@@ -1,0 +1,14 @@
+-- 코드를 입력하세요
+SELECT a.APNT_NO,
+    p.PT_NAME,
+    p.PT_NO,
+    d.MCDP_CD,
+    d.DR_NAME, 
+    a.APNT_YMD 
+    FROM APPOINTMENT AS a
+    LEFT JOIN PATIENT AS p ON p.PT_NO = a.PT_NO
+    LEFT JOIN DOCTOR AS d ON d.DR_ID = a.MDDR_ID
+    WHERE d.MCDP_CD = 'CS'
+    AND a.APNT_YMD LIKE '2022-04-13%'
+    AND a.APNT_CNCL_YN = 'N'
+    ORDER BY a.APNT_YMD ASC;
